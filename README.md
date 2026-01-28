@@ -25,50 +25,48 @@ Before running the application, ensure you have the following:
 
 Ensure your directory looks like this for the code to run without errors:
 
-```text
-├── icons/
-│   └── logo.gif       # Required for the app icon (referenced in code)
-├── main.py            # The python script provided
-├── contacts.db        # Generated automatically (see Setup below)
-└── README.md
-```
-⚙️ Setup & Installation
-1. Database Initialization
-Important: The provided Python code assumes the database table already exists. You must create the table before running the app for the first time.
+    ├── icons/
+    │   └── logo.gif       # Required for the app icon (referenced in code)
+    ├── main.py            # The python script provided
+    ├── contacts.db        # Generated automatically (see Setup below)
+    └── README.md
+
+## ⚙️ Setup & Installation
+
+### 1. Database Initialization
+**Important:** The provided Python code assumes the database table already exists. You must create the table before running the app for the first time.
 
 Open your terminal or a SQLite browser and run the following SQL command to create the necessary table:
 
-SQL
-CREATE TABLE IF NOT EXISTS contacts_list (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    email TEXT,
-    number TEXT
-);
-Alternatively, you can add a create_table function to the __init__ method in your Python script.
+    CREATE TABLE IF NOT EXISTS contacts_list (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        email TEXT,
+        number TEXT
+    );
 
-2. Icon Setup
-The code looks for an image at icons/logo.gif.
-Create a folder named icons in the same directory as your script.
-Place a .gif image inside it and name it logo.gif.
-(If you don't have an image, you can comment out the create_left_icon method call in the code).
+*Alternatively, you can add a `create_table` function to the `__init__` method in your Python script.*
 
-3. Running the App
+### 2. Icon Setup
+The code looks for an image at `icons/logo.gif`.
+1. Create a folder named `icons` in the same directory as your script.
+2. Place a `.gif` image inside it and name it `logo.gif`.
+3. *(If you don't have an image, you can comment out the `create_left_icon` method call in the code).*
+
+### 3. Running the App
 Run the script using Python:
-Bash
-python main.py
 
-🖥️ Usage Guide
-Add Contact: Fill in the Name, Email, and Number fields in the top right panel and click "Add Contact".
-View Contacts: The list updates automatically. You can scroll through the Treeview on the left.
-Modify: Select a row, click "Modify Selected", and enter a new phone number in the pop-up window.
-Delete: Select a row and click "Delete Selected" to remove the record permanently.
+    python main.py
 
-🧩 Technologies Used
-Language: Python
-GUI Framework: Tkinter (ttk)
-Database: SQLite3
+## 🖥️ Usage Guide
 
+1.  **Add Contact:** Fill in the Name, Email, and Number fields in the top right panel and click **"Add Contact"**.
+2.  **View Contacts:** The list updates automatically. You can scroll through the `Treeview` on the left.
+3.  **Modify:** Select a row, click **"Modify Selected"**, and enter a new phone number in the pop-up window.
+4.  **Delete:** Select a row and click **"Delete Selected"** to remove the record permanently.
 
+## 🧩 Technologies Used
 
-
+* **Language:** Python
+* **GUI Framework:** Tkinter (ttk)
+* **Database:** SQLite3
